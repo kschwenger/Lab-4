@@ -16,3 +16,7 @@ print('<input type="range" name="slider" min ="0" max="100" value ="LEDvalue"/><
 
 print("selection = " + selectedLED + '<br>')
 print("LEDslider = " + LEDvalue + '<br>')
+
+print('<input type="submit" value="Submit">')
+print('</form>')
+print('</html>')
