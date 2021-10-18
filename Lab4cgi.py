@@ -1,9 +1,18 @@
 #!/usr/bin/python37all
 import cgi
-data = cgi.FieldStorage()
-selectedLED = data.getvalue('option')
-LEDvalue = data.getvalue('slider')
+import json
 
+# get data from html form
+dataFromhtml = cgi.FieldStorage()
+selectedLED = dataFromhtml.getvalue('option')
+LEDvalue = dataFromhtml.getvalue('slider')
+
+# save data with json
+data2send = {"selection":selectedLED, "slider":LEDvalue}
+with open('Lab4pwm.txt', 'w') as f:
+  json.dump(data,f)
+
+# display updated page
 print('Content-type: text/html\n\n')
 print('<html>')
 
