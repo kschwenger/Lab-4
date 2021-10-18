@@ -1,5 +1,5 @@
 #!/usr/bin/python37all
-import cgi    # for radio
+import cgi    
 print("Content-type: text/html\n\n")
 data = cgi.FieldStorage()
 print("selection = " + data.getvalue("option"))
