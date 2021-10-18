@@ -1,4 +1,4 @@
-# reading data with jsom
+# reading data with jsom ahhhh
 import json
 with open('LEDpwm.txt', 'r') as f:
 data = json.load(f)
