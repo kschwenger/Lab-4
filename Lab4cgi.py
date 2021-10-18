@@ -11,6 +11,6 @@ import json
 selectedLED = data.getvalue('selection')
 LEDvalue = data.getvalue('LEDslider')
 data = {"selection":selectedLED, "LEDslider":LEDvalue}
-with open('LEDpwm.txt', 'w') as f:
+with open('Lab4pwm.txt', 'w') as f:
 json.dump(data,f)
 """
