@@ -29,13 +29,13 @@ try:
     with open('Lab4pwm.txt', 'r') as f:
       data = json.load(f)
     
-    if data['selection'] == 1:
+    if int(data['selection']) == 1:
       pwm1.ChangeDutyCycle(int(data['slider']))
       time.sleep(0.1)
-    elif data['selection'] == 2:
+    elif int(data['selection']) == 2:
       pwm2.ChangeDutyCycle(int(data['slider']))
       time.sleep(0.1)
-    elif data['selection'] == 3:
+    elif int(data['selection']) == 3:
       pwm3.ChangeDutyCycle(int(data['slider']))
       time.sleep(0.1)
     else:
