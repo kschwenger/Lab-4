@@ -16,14 +16,16 @@ with open('Lab4pwm.txt', 'w') as f:
 print('Content-type: text/html\n\n')
 print('<html>')
 
-print("Previous selection: " + selectedLED + "at " + LEDvalue + '<br>')
+print('Previous selection: Led ' + selectedLED + ' at a brightness of ' + LEDvalue + '%' + '<br>')
 print('<br>')
 
+print('Choose LED' + '<br>')
 print('<form action="/cgi-bin/Lab4cgi.py" method="POST">')
 print('<input type="radio" name="option" value="1"> LED 1 <br>')
 print('<input type="radio" name="option" value="2"> LED 2 <br>')
 print('<input type="radio" name="option" value="3"> LED 3 <br>')
 
+print('Change brightness of chosen LED' + '<br>')
 print('<input type="range" name="slider" min ="0" max="100" value ="LEDvalue"/><br>')
 
 print('<input type="submit" value="Submit">')
