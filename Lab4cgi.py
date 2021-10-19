@@ -26,7 +26,7 @@ print('<input type="radio" name="option" value="2"> LED 2 <br>')
 print('<input type="radio" name="option" value="3"> LED 3 <br>')
 
 print('Change brightness of chosen LED' + '<br>')
-print('<input type="range" name="slider" min ="0" max="100" value ="LEDvalue"/><br>')
+print('0% <input type="range" name="slider" min ="0" max="100" value ="LEDvalue"/> 100% <br>')
 
 print('<input type="submit" value="Submit">')
 print('</form>')
