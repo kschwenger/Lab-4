@@ -29,19 +29,21 @@ try:
     with open('Lab4pwm.txt', 'r') as f:
       data = json.load(f)
     
-    if int(data['selection']) == 1:
+    if data['selection'] == 1:
       pwm1.ChangeDutyCycle(int(data['slider']))
       time.sleep(0.1)
-    elif int(data['selection']) == 2:
+    elif data['selection'] == 2:
       pwm2.ChangeDutyCycle(int(data['slider']))
       time.sleep(0.1)
-    elif int(data['selection']) == 3:
+    elif data['selection'] == 3:
       pwm3.ChangeDutyCycle(int(data['slider']))
       time.sleep(0.1)
+    else:
+      pass
       
 except KeyboardInterrupt: # if user hits ctrl-C
   print('\nExiting')
 except Exception as e: # catch all other errors
   print('\ne')
 
-gpio.cleanup() # Clean up
+GPIO.cleanup() # Clean up
