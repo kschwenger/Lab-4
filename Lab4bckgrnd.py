@@ -2,7 +2,7 @@ import json
 import RPi.GPIO as GPIO
 import time
 
-# establish leds
+# establish leds a
 led1 = 13
 led2 = 26
 led3 = 20

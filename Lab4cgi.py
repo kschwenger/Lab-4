@@ -2,7 +2,7 @@
 import cgi
 import json
 
-# get data from html form
+# get data from html form a
 dataFromhtml = cgi.FieldStorage()
 selectedLED = dataFromhtml.getvalue('option')
 LEDvalue = dataFromhtml.getvalue('slider')
