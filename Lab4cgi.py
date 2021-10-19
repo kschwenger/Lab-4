@@ -10,9 +10,9 @@ LEDvalue = dataFromhtml.getvalue('slider')
 # save data with json
 data2send = {"selection":selectedLED, "slider":LEDvalue}
 with open('Lab4pwm.txt', 'w') as f:
-  json.dump(data,f)
+  json.dump(data2send,f)
 
-# display updated page
+# display updated page, resubmit form
 print('Content-type: text/html\n\n')
 print('<html>')
 
