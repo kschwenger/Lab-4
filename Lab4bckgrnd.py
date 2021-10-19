@@ -24,16 +24,21 @@ pwm1.start(0)
 pwm2.start(0)
 pwm3.start(0)
 
+# continually run 
 while True:
+  # open saved json data from cgi code
   with open('Lab4pwm.txt', 'r') as f:
     data = json.load(f)
 
+  # if the selection is LED 1, change the duty cycle to chosen slider value for LED 1
   if int(data['selection']) == 1:
     pwm1.ChangeDutyCycle(int(data['slider']))
     time.sleep(0.1)
+  # if the selection is LED 2, change the duty cycle to chosen slider value for LED 2
   elif int(data['selection']) == 2:
     pwm2.ChangeDutyCycle(int(data['slider']))
     time.sleep(0.1)
+  # if the selection is LED 3, change the duty cycle to chosen slider value for LED 3
   elif int(data['selection']) == 3:
     pwm3.ChangeDutyCycle(int(data['slider']))
     time.sleep(0.1)
