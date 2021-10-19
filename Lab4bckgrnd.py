@@ -24,16 +24,23 @@ pwm1.start(0)
 pwm2.start(0)
 pwm3.start(0)
 
-while True:
-  with open('Lab4pwm.txt', 'r') as f:
-    data = json.load(f)
+try:
+  while True:
+    with open('Lab4pwm.txt', 'r') as f:
+      data = json.load(f)
 
-  if int(data['selection']) == 1:
-    pwm1.ChangeDutyCycle(int(data['slider']))
-    time.sleep(0.1)
-  elif int(data['selection']) == 2:
-    pwm2.ChangeDutyCycle(int(data['slider']))
-    time.sleep(0.1)
-  elif int(data['selection']) == 3:
-    pwm3.ChangeDutyCycle(int(data['slider']))
-    time.sleep(0.1)
+    if int(data['selection']) == 1:
+      pwm1.ChangeDutyCycle(int(data['slider']))
+      time.sleep(0.1)
+    elif int(data['selection']) == 2:
+      pwm2.ChangeDutyCycle(int(data['slider']))
+      time.sleep(0.1)
+    elif int(data['selection']) == 3:
+      pwm3.ChangeDutyCycle(int(data['slider']))
+      time.sleep(0.1)
+except KeyboardInterrupt: # if user hits ctrl-C
+  print('\nExiting')
+except Exception as e: # catch all other errors
+  print('\ne')
+
+gpio.cleanup() # Clean up

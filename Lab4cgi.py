@@ -16,8 +16,8 @@ with open('Lab4pwm.txt', 'w') as f:
 print('Content-type: text/html\n\n')
 print('<html>')
 
-print("selection = " + selectedLED + '<br>')
-print("LEDslider = " + LEDvalue + '<br>')
+print("Previous selection: " + selectedLED + "at " + LEDvalue + '<br>')
+print('<br>')
 
 print('<form action="/cgi-bin/Lab4cgi.py" method="POST">')
 print('<input type="radio" name="option" value="1"> LED 1 <br>')
