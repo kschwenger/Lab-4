@@ -43,4 +43,4 @@ except KeyboardInterrupt: # if user hits ctrl-C
 except Exception as e: # catch all other errors
   print('\ne')
 
-gpio.cleanup() # Clean up
+GPIO.cleanup() # Clean up
