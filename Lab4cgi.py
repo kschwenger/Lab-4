@@ -25,6 +25,7 @@ print('<form action="/cgi-bin/Lab4cgi.py" method="POST">')
 print('<input type="radio" name="option" value="1"> LED 1 <br>')
 print('<input type="radio" name="option" value="2"> LED 2 <br>')
 print('<input type="radio" name="option" value="3"> LED 3 <br>')
+print('<br>')
 
 # present slider to change brightness of chosen LED
 print('Change brightness of chosen LED' + '<br>')
