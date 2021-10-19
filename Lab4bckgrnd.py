@@ -19,13 +19,15 @@ pwm1 = GPIO.PWM(led1, 100)
 pwm2 = GPIO.PWM(led2, 100)
 pwm3 = GPIO.PWM(led3, 100)
 
-try:
-  while True:
-    with open('Lab4pwm.txt', 'r') as f:
-      data = json.load(f)
-      print("selected LED = " + str(data['selection']))
-      print("LED value = " + str(data['slider']))
-except KeyboardInterrupt: # if user hits ctrl-C
-  print('\nExiting')
-except Exception as e: # catch all other errors
-  print('\ne')
+# start duty cycles at 0
+pwm1.start(0)
+pwm2.start(50)
+pwm3.start(100)
+
+while True:
+  with open('Lab4pwm.txt', 'r') as f:
+    data = json.load(f)
+  print("selected LED = " + str(data['selection']))
+  print("LED value = " + str(data['slider']))
+  pwm1.ChangeDutyCycle(int(data['slider']))
+  time.sleep(0.1)
