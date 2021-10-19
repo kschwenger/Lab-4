@@ -2,7 +2,7 @@ import json
 import RPi.GPIO as GPIO
 import time
 
-# establish leds a
+# establish leds
 led1 = 13
 led2 = 26
 led3 = 20
@@ -28,12 +28,12 @@ while True:
   with open('Lab4pwm.txt', 'r') as f:
     data = json.load(f)
 
-  if int(data['selection']) == 1:
+  if data['selection'] == 1:
     pwm1.ChangeDutyCycle(int(data['slider']))
     time.sleep(0.1)
-  elif int(data['selection']) == 2:
+  elif data['selection'] == 2:
     pwm2.ChangeDutyCycle(int(data['slider']))
     time.sleep(0.1)
-  elif int(data['selection']) == 3:
+  elif data['selection'] == 3:
     pwm3.ChangeDutyCycle(int(data['slider']))
     time.sleep(0.1)
