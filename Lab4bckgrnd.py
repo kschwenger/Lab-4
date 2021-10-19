@@ -24,10 +24,17 @@ pwm1.start(0)
 pwm2.start(50)
 pwm3.start(100)
 
-while True:
-  with open('Lab4pwm.txt', 'r') as f:
-    data = json.load(f)
-  print("selected LED = " + str(data['selection']))
-  print("LED value = " + str(data['slider']))
-  pwm1.ChangeDutyCycle(int(data['slider']))
-  time.sleep(0.1)
+try:
+  while True:
+    with open('Lab4pwm.txt', 'r') as f:
+      data = json.load(f)
+    print("selected LED = " + str(data['selection']))
+    print("LED value = " + str(data['slider']))
+    pwm1.ChangeDutyCycle(int(data['slider']))
+    time.sleep(0.1)
+except KeyboardInterrupt: # if user hits ctrl-C
+  print('\nExiting')
+except Exception as e: # catch all other errors
+  print('\ne')
+
+gpio.cleanup() # Clean up
